@@ -56,7 +56,7 @@ The first run needs internet: it downloads CLIP (~600 MB) and the EasyOCR weight
 
 Not in the repository: the 1.5 GB produce dataset (`data_raw/`, `dataset_vision/`). It is only needed to retrain or re-evaluate the model; `python scripts/download_datasets.py` downloads and splits it again.
 
-The project report is in `docs/FoodGuard_AI_Project_Report.docx`.
+The project report is in `docs/FoodGuard_AI_Project_Report.docx`; the review document (literature survey, methodology and system design) is in `docs/FoodGuard_AI_Review_Survey_Methodology_Design.docx`.
 
 ## 2. Data and training (already done in this folder)
 
@@ -122,7 +122,8 @@ FoodGuard_AI/
 ├── models/                      weights, class names, metrics, confusion matrix, training log
 ├── scripts/                     download / train / evaluate / synthetic labels
 ├── templates/, static/          web UI (Young Serif + Figtree fonts, light / dark themes)
-├── docs/                        FoodGuard_AI_Project_Report.docx (project report)
+├── docs/                        FoodGuard_AI_Project_Report.docx (full project report)
+│                                FoodGuard_AI_Review_Survey_Methodology_Design.docx (review: survey, methodology, design)
 └── tests/                       pytest suite
 ```
 
