@@ -1,0 +1,16 @@
+# Install PyTorch FIRST with the CUDA build for your GPU (see README), e.g.:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+torch>=2.6
+torchvision>=0.21
+transformers>=4.45
+easyocr>=1.7.2
+opencv-python>=4.8
+rapidfuzz>=3.9
+flask>=3.0
+pillow>=10.0
+numpy>=1.26
+scikit-learn>=1.4
+matplotlib>=3.8
+requests>=2.31
+kagglehub>=0.3
+pytest>=8.0

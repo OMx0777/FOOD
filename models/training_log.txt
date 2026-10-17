@@ -1,0 +1,44 @@
+Device: cuda | classes: ['fresh_apple', 'fresh_banana', 'fresh_bitter_gourd', 'fresh_capsicum', 'fresh_orange', 'fresh_tomato', 'stale_apple', 'stale_banana', 'stale_bitter_gourd', 'stale_capsicum', 'stale_orange', 'stale_tomato'] | train images: 10329
+Downloading: "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth" to C:\Users\Admin/.cache\torch\hub\checkpoints\mobilenet_v2-7ebf99e0.pth
+  0%|          | 0.00/13.6M [00:00<?, ?B/s]  1%|          | 128k/13.6M [00:00<00:43, 325kB/s]  2%|1         | 256k/13.6M [00:00<00:30, 462kB/s]  3%|2         | 384k/13.6M [00:00<00:25, 539kB/s]  6%|5         | 768k/13.6M [00:00<00:12, 1.04MB/s] 12%|#1        | 1.62M/13.6M [00:01<00:05, 2.22MB/s] 23%|##2       | 3.12M/13.6M [00:01<00:02, 4.04MB/s] 46%|####5     | 6.25M/13.6M [00:01<00:00, 8.02MB/s] 71%|#######   | 9.62M/13.6M [00:01<00:00, 13.0MB/s] 83%|########2 | 11.2M/13.6M [00:01<00:00, 12.9MB/s]100%|##########| 13.6M/13.6M [00:02<00:00, 13.2MB/s]100%|##########| 13.6M/13.6M [00:02<00:00, 7.11MB/s]
+[head 1/3] train acc 0.6729 loss 1.5366 | val acc 0.9249 F1 0.9287 | 64.9s  <- best, saved
+[head 2/3] train acc 0.9170 loss 0.7281 | val acc 0.9497 F1 0.9508 | 8.8s  <- best, saved
+[head 3/3] train acc 0.9338 loss 0.6696 | val acc 0.9473 F1 0.9485 | 8.8s
+[finetune 1/12] train acc 0.9546 loss 0.5671 | val acc 0.9664 F1 0.9639 | 15.5s  <- best, saved
+[finetune 2/12] train acc 0.9866 loss 0.4551 | val acc 0.9692 F1 0.9651 | 10.8s  <- best, saved
+[finetune 3/12] train acc 0.9961 loss 0.4173 | val acc 0.9744 F1 0.9726 | 10.9s  <- best, saved
+[finetune 4/12] train acc 0.9979 loss 0.4075 | val acc 0.9730 F1 0.9683 | 10.8s
+[finetune 5/12] train acc 0.9980 loss 0.3993 | val acc 0.9730 F1 0.9692 | 10.8s
+[finetune 6/12] train acc 0.9991 loss 0.3941 | val acc 0.9734 F1 0.9695 | 10.9s
+[finetune 7/12] train acc 0.9996 loss 0.3910 | val acc 0.9734 F1 0.9695 | 10.9s
+[finetune 8/12] train acc 0.9999 loss 0.3895 | val acc 0.9744 F1 0.9701 | 10.8s
+[finetune 9/12] train acc 0.9993 loss 0.3888 | val acc 0.9734 F1 0.9694 | 10.9s
+[finetune 10/12] train acc 0.9998 loss 0.3878 | val acc 0.9739 F1 0.9698 | 10.9s
+[finetune 11/12] train acc 0.9999 loss 0.3870 | val acc 0.9725 F1 0.9689 | 10.9s
+[finetune 12/12] train acc 0.9997 loss 0.3875 | val acc 0.9725 F1 0.9689 | 10.9s
+
+Best validation macro-F1: 0.9726. Weights: C:\Users\Admin\Desktop\dadya_project\FoodGuard_AI\models\spoilage_mobilenetv2.pt
+
+== test (2208 images) ==
+12-class accuracy      : 0.9719
+Fresh-vs-stale accuracy: 0.9706
+Decision rule          : {'safe': 929, 'caution': 222, 'unsafe': 1057, 'accuracy_when_decided': 0.9934541792547835, 'stale_marked_safe': 0, 'fresh_marked_unsafe': 13}
+                    precision    recall  f1-score   support
+
+       fresh_apple      0.984     1.000     0.992       254
+      fresh_banana      1.000     0.991     0.996       234
+fresh_bitter_gourd      1.000     1.000     1.000        40
+    fresh_capsicum      0.874     1.000     0.933       153
+      fresh_orange      0.995     0.973     0.984       223
+      fresh_tomato      1.000     0.780     0.877       123
+       stale_apple      1.000     0.989     0.994       352
+      stale_banana      0.991     1.000     0.995       220
+stale_bitter_gourd      1.000     1.000     1.000        42
+    stale_capsicum      1.000     0.866     0.928       164
+      stale_orange      0.976     0.996     0.986       240
+      stale_tomato      0.858     1.000     0.924       163
+
+          accuracy                          0.972      2208
+         macro avg      0.973     0.966     0.967      2208
+      weighted avg      0.975     0.972     0.972      2208
+

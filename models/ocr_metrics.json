@@ -1,0 +1,66 @@
+{
+  "images": 6,
+  "per_field_accuracy": {
+    "added_sugar_g": 1.0,
+    "total_sugar_g": 1.0,
+    "saturated_fat_g": 1.0,
+    "sodium_g": 1.0
+  },
+  "verdict_agreement": 1.0,
+  "rows": [
+    {
+      "image": "synthetic_01_crunchy_masala_chips.jpg",
+      "verdict": "UNSAFE",
+      "added_sugar_g": "1.1 vs 1.1 OK",
+      "total_sugar_g": "2.4 vs 2.4 OK",
+      "saturated_fat_g": "15.2 vs 15.2 OK",
+      "sodium_g": "0.74 vs 0.74 OK",
+      "expected_verdict": "UNSAFE"
+    },
+    {
+      "image": "synthetic_02_oat_digestive_biscuits.jpg",
+      "verdict": "SAFE",
+      "added_sugar_g": "2.0 vs 2.0 OK",
+      "total_sugar_g": "2.6 vs 2.6 OK",
+      "saturated_fat_g": "3.1 vs 3.1 OK",
+      "sodium_g": "0.41 vs 0.41 OK",
+      "expected_verdict": "SAFE"
+    },
+    {
+      "image": "synthetic_03_mango_fruit_drink.jpg",
+      "verdict": "UNSAFE",
+      "added_sugar_g": "12.8 vs 12.8 OK",
+      "total_sugar_g": "14.2 vs 14.2 OK",
+      "saturated_fat_g": "0.0 vs 0.0 OK",
+      "sodium_g": "0.012 vs 0.012 OK",
+      "expected_verdict": "UNSAFE"
+    },
+    {
+      "image": "synthetic_04_lightly_salted_makhana.jpg",
+      "verdict": "SAFE",
+      "added_sugar_g": "0.0 vs 0.0 OK",
+      "total_sugar_g": "0.8 vs 0.8 OK",
+      "saturated_fat_g": "1.2 vs 1.2 OK",
+      "sodium_g": "0.52 vs 0.52 OK",
+      "expected_verdict": "SAFE"
+    },
+    {
+      "image": "synthetic_05_unsweetened_soy_milk.jpg",
+      "verdict": "SAFE",
+      "added_sugar_g": "0.0 vs 0.0 OK",
+      "total_sugar_g": "0.4 vs 0.4 OK",
+      "saturated_fat_g": "0.3 vs 0.3 OK",
+      "sodium_g": "0.045 vs 0.045 OK",
+      "expected_verdict": "SAFE"
+    },
+    {
+      "image": "synthetic_06_classic_cream_wafers.jpg",
+      "verdict": "UNSAFE",
+      "added_sugar_g": "36.5 vs 36.5 OK",
+      "total_sugar_g": "38.0 vs 38.0 OK",
+      "saturated_fat_g": "16.4 vs 16.4 OK",
+      "sodium_g": "0.2 vs 0.2 OK",
+      "expected_verdict": "UNSAFE"
+    }
+  ]
+}

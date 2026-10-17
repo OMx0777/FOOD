@@ -1,0 +1,184 @@
+{
+  "_comment": "Brand -> parent company. Stage 3 flags a MISMATCH when the photo shows a brand from a DIFFERENT family than the product the user named (e.g. user says 'Amul Butter', photo says 'Britannia'). A sub-brand and its parent (Lays / PepsiCo) are the same family, so 'Mfd by PepsiCo' on a Lays pack is not a mismatch. Add brands as needed.",
+  "families": {
+    "pepsico": [
+      "pepsico",
+      "lays",
+      "lay's",
+      "kurkure",
+      "uncle chipps",
+      "doritos",
+      "cheetos",
+      "quaker",
+      "tropicana",
+      "pepsi",
+      "mountain dew",
+      "7up",
+      "mirinda",
+      "gatorade"
+    ],
+    "nestle": [
+      "nestle",
+      "maggi",
+      "kitkat",
+      "milkybar",
+      "nescafe",
+      "cerelac",
+      "a+ nourish"
+    ],
+    "mondelez": [
+      "mondelez",
+      "cadbury",
+      "dairy milk",
+      "bournvita",
+      "oreo",
+      "5 star",
+      "bournville"
+    ],
+    "britannia": [
+      "britannia",
+      "good day",
+      "marie gold",
+      "nutrichoice",
+      "milk bikis",
+      "little hearts",
+      "winkin cow"
+    ],
+    "parle": [
+      "parle",
+      "parle-g",
+      "parle g",
+      "hide & seek",
+      "monaco",
+      "krackjack",
+      "kismi"
+    ],
+    "parle_agro": [
+      "parle agro",
+      "frooti",
+      "appy",
+      "appy fizz",
+      "smoodh"
+    ],
+    "itc": [
+      "itc",
+      "sunfeast",
+      "bingo",
+      "yippee",
+      "aashirvaad",
+      "dark fantasy",
+      "mom's magic",
+      "candyman"
+    ],
+    "amul": [
+      "amul",
+      "gcmmf",
+      "gujarat cooperative milk"
+    ],
+    "mother_dairy": [
+      "mother dairy",
+      "safal",
+      "dhara"
+    ],
+    "haldiram": [
+      "haldiram",
+      "haldiram's"
+    ],
+    "bikaji": [
+      "bikaji"
+    ],
+    "balaji": [
+      "balaji"
+    ],
+    "coca_cola": [
+      "coca-cola",
+      "coca cola",
+      "thums up",
+      "sprite",
+      "fanta",
+      "maaza",
+      "limca",
+      "minute maid",
+      "kinley"
+    ],
+    "dabur": [
+      "dabur",
+      "real fruit power",
+      "real juice",
+      "hajmola"
+    ],
+    "patanjali": [
+      "patanjali"
+    ],
+    "tata": [
+      "tata",
+      "tata sampann",
+      "tata salt",
+      "tata tea",
+      "tetley",
+      "soulfull"
+    ],
+    "hul": [
+      "hindustan unilever",
+      "kissan",
+      "knorr",
+      "kwality wall's",
+      "bru",
+      "horlicks",
+      "red label",
+      "brooke bond"
+    ],
+    "marico": [
+      "marico",
+      "saffola",
+      "parachute"
+    ],
+    "adani_wilmar": [
+      "adani wilmar",
+      "awl agri",
+      "fortune"
+    ],
+    "mtr": [
+      "mtr"
+    ],
+    "paper_boat": [
+      "paper boat",
+      "hector beverages"
+    ],
+    "unibic": [
+      "unibic"
+    ],
+    "priyagold": [
+      "priyagold",
+      "priya gold"
+    ],
+    "ferrero": [
+      "ferrero",
+      "nutella",
+      "kinder",
+      "tic tac"
+    ],
+    "mars": [
+      "mars wrigley",
+      "snickers",
+      "bounty",
+      "twix",
+      "m&m's"
+    ],
+    "kelloggs": [
+      "kellogg",
+      "kellogg's",
+      "pringles"
+    ],
+    "keventers": [
+      "keventers"
+    ],
+    "nandini": [
+      "nandini",
+      "kmf"
+    ],
+    "aavin": [
+      "aavin"
+    ]
+  }
+}

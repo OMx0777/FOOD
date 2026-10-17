@@ -1,0 +1,77 @@
+{
+  "seed": 42,
+  "classes": {
+    "fresh_apple": {
+      "source_photos": 232,
+      "train": 1186,
+      "validation": 253,
+      "test": 254
+    },
+    "fresh_banana": {
+      "source_photos": 218,
+      "train": 1106,
+      "validation": 241,
+      "test": 234
+    },
+    "fresh_bitter_gourd": {
+      "source_photos": 8,
+      "train": 246,
+      "validation": 41,
+      "test": 40
+    },
+    "fresh_capsicum": {
+      "source_photos": 32,
+      "train": 682,
+      "validation": 155,
+      "test": 153
+    },
+    "fresh_orange": {
+      "source_photos": 206,
+      "train": 1025,
+      "validation": 218,
+      "test": 223
+    },
+    "fresh_tomato": {
+      "source_photos": 24,
+      "train": 695,
+      "validation": 163,
+      "test": 123
+    },
+    "stale_apple": {
+      "source_photos": 327,
+      "train": 1643,
+      "validation": 347,
+      "test": 352
+    },
+    "stale_banana": {
+      "source_photos": 299,
+      "train": 1025,
+      "validation": 222,
+      "test": 220
+    },
+    "stale_bitter_gourd": {
+      "source_photos": 17,
+      "train": 252,
+      "validation": 63,
+      "test": 42
+    },
+    "stale_capsicum": {
+      "source_photos": 12,
+      "train": 655,
+      "validation": 82,
+      "test": 164
+    },
+    "stale_orange": {
+      "source_photos": 222,
+      "train": 1118,
+      "validation": 237,
+      "test": 240
+    },
+    "stale_tomato": {
+      "source_photos": 24,
+      "train": 696,
+      "validation": 123,
+      "test": 163
+    }
+  }
+}

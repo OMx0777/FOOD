@@ -1,0 +1,73 @@
+{
+  "_comment": "All decision thresholds for FoodGuard AI live in this file so they can be changed without touching code. Nutrient limits are per 100 g (solids) or per 100 ml (liquids). VERIFY these values against the current FSSAI (Labelling and Display) Regulations / FOPNL notification before final submission and cite the exact clause.",
+
+  "packaged_categories": {
+    "packaged_solid": {
+      "label": "Packaged - Solid food",
+      "basis": "100g",
+      "limits": {
+        "added_sugar_g": 3.0,
+        "saturated_fat_g": 4.2,
+        "sodium_g": 0.625
+      }
+    },
+    "packaged_liquid": {
+      "label": "Packaged - Liquid beverage",
+      "basis": "100ml",
+      "limits": {
+        "added_sugar_g": 1.5,
+        "saturated_fat_g": 2.1,
+        "sodium_g": 0.300
+      }
+    },
+    "packaged_exempt": {
+      "label": "Packaged - Exempt / single-ingredient (oils, ghee, honey, dried fruit)",
+      "basis": "100g",
+      "hfss_exempt": true,
+      "limits": {}
+    }
+  },
+
+  "nutrient_rules": {
+    "salt_to_sodium_factor": 2.5,
+    "use_total_sugar_if_added_missing": true,
+    "max_plausible_g_per_100": {
+      "added_sugar_g": 100.0,
+      "total_sugar_g": 100.0,
+      "saturated_fat_g": 100.0,
+      "total_fat_g": 100.0,
+      "sodium_g": 40.0
+    }
+  },
+
+  "produce": {
+    "fresh_confidence_safe": 0.85,
+    "stale_confidence_unsafe": 0.85
+  },
+
+  "guardrails": {
+    "food_probability_min": 0.40,
+    "category_margin": 0.30,
+    "liquid_margin": 0.20,
+    "min_text_boxes_packaged": 6,
+    "min_nutrition_keywords": 2,
+    "produce_supported_min_prob": 0.10,
+    "identity_fuzzy_min_score": 70,
+    "nutrient_divergence_rel": 0.35,
+    "nutrient_divergence_abs_g": {
+      "added_sugar_g": 1.5,
+      "total_sugar_g": 1.5,
+      "saturated_fat_g": 1.0,
+      "total_fat_g": 1.5,
+      "sodium_g": 0.12
+    }
+  },
+
+  "exempt_keywords": [
+    "ghee", "honey", "edible oil", "refined oil", "mustard oil", "groundnut oil",
+    "sunflower oil", "olive oil", "coconut oil", "rice bran oil", "sesame oil",
+    "cold pressed", "kachi ghani", "dry fruits", "dried fruits", "almonds", "cashew",
+    "cashews", "raisins", "kishmish", "walnuts", "pistachio", "dates", "khajur",
+    "butter", "jaggery", "iodised salt", "rock salt"
+  ]
+}

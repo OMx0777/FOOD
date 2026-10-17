@@ -1,0 +1,51 @@
+{
+  "_source": "Approximate values per 100 g raw edible portion, USDA FoodData Central (SR Legacy). Shelf life and storage are typical household guidance.",
+  "apple": {
+    "name": "Apple", "local_name": "Seb", "kind": "Fruit",
+    "energy_kcal": 52, "carbohydrate_g": 13.8, "fibre_g": 2.4, "sugar_g": 10.4, "vitamin_c_mg": 4.6, "potassium_mg": 107,
+    "known_for": ["Good source of dietary fibre (pectin), mostly in the skin", "Rich in polyphenol antioxidants such as quercetin"],
+    "storage": "Refrigerate in the crisper drawer; keep away from bananas, as apples release ethylene that speeds ripening.",
+    "shelf_life": "1-2 weeks at room temperature, 4-6 weeks refrigerated",
+    "spoilage_signs": "Soft brown patches, wrinkled skin, fermented smell, mould near the stem"
+  },
+  "banana": {
+    "name": "Banana", "local_name": "Kela", "kind": "Fruit",
+    "energy_kcal": 89, "carbohydrate_g": 22.8, "fibre_g": 2.6, "sugar_g": 12.2, "vitamin_c_mg": 8.7, "potassium_mg": 358,
+    "known_for": ["One of the richest everyday sources of potassium", "Good source of vitamin B6 and quick energy"],
+    "storage": "Keep at room temperature, away from other fruit. Refrigerating ripe bananas darkens the peel but keeps the flesh.",
+    "shelf_life": "2-7 days at room temperature depending on ripeness",
+    "spoilage_signs": "Black, leaking peel, mushy flesh, fruit flies, sour or alcoholic smell"
+  },
+  "bitter_gourd": {
+    "name": "Bitter gourd", "local_name": "Karela", "kind": "Vegetable",
+    "energy_kcal": 17, "carbohydrate_g": 3.7, "fibre_g": 2.8, "sugar_g": null, "vitamin_c_mg": 84, "potassium_mg": 296,
+    "known_for": ["Very high in vitamin C for a vegetable", "Good source of folate; traditionally used in diabetic diets"],
+    "storage": "Refrigerate unwashed in a paper bag or cloth; use within a few days.",
+    "shelf_life": "3-5 days refrigerated",
+    "spoilage_signs": "Turns yellow-orange, soft and slimy spots, seeds turn red, shrivelled skin"
+  },
+  "capsicum": {
+    "name": "Capsicum (bell pepper)", "local_name": "Shimla mirch", "kind": "Vegetable",
+    "energy_kcal": 20, "carbohydrate_g": 4.6, "fibre_g": 1.7, "sugar_g": 2.4, "vitamin_c_mg": 80.4, "potassium_mg": 175,
+    "known_for": ["Excellent source of vitamin C", "Low in calories, provides vitamin B6 and vitamin K"],
+    "storage": "Refrigerate whole and dry in the vegetable drawer; cut capsicum keeps 2-3 days in a closed box.",
+    "shelf_life": "1-2 weeks refrigerated",
+    "spoilage_signs": "Wrinkled, soft skin, dark sunken spots, white or black mould around the stem"
+  },
+  "orange": {
+    "name": "Orange", "local_name": "Santra", "kind": "Fruit",
+    "energy_kcal": 47, "carbohydrate_g": 11.8, "fibre_g": 2.4, "sugar_g": 9.4, "vitamin_c_mg": 53.2, "potassium_mg": 181,
+    "known_for": ["Rich in vitamin C (one orange covers most of a day's need)", "Provides folate and flavonoids such as hesperidin"],
+    "storage": "Room temperature for a few days, or refrigerate loose (not in a sealed bag) for longer.",
+    "shelf_life": "about 1 week at room temperature, 3-4 weeks refrigerated",
+    "spoilage_signs": "Soft, sunken areas, blue-green or white mould, sour fermented smell"
+  },
+  "tomato": {
+    "name": "Tomato", "local_name": "Tamatar", "kind": "Vegetable (botanically a fruit)",
+    "energy_kcal": 18, "carbohydrate_g": 3.9, "fibre_g": 1.2, "sugar_g": 2.6, "vitamin_c_mg": 13.7, "potassium_mg": 237,
+    "known_for": ["Main dietary source of the antioxidant lycopene (more available when cooked)", "Provides vitamin C and potassium"],
+    "storage": "Ripen at room temperature, stem side down; refrigerate only once fully ripe.",
+    "shelf_life": "3-5 days ripe at room temperature, about 1 week more refrigerated",
+    "spoilage_signs": "Wrinkled skin, leaking juice, dark soft spots, white or grey fuzzy mould"
+  }
+}

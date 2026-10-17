@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+data_raw/
+dataset_vision/train/
+dataset_vision/validation/
+dataset_vision/test/
+.venv/
+venv/
+.vscode/
+.idea/
+*.log
+~$*.docx

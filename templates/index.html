@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodGuard</title>
+  <script>
+    // Apply a saved theme before first paint so the page never flashes the wrong colours.
+    try { const t = localStorage.getItem("fg-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preload" href="{{ url_for('static', filename='fonts/YoungSerif.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path class="brand-leaf" d="M20 4C10 9 6 17 7 27c1 5 5 9 13 9 8 0 12-4 13-9 1-10-3-18-13-23Z"/>
+      <path class="brand-vein" d="M20 33V12m0 8-5-4m5 9 6-5"/>
+    </svg>
+    <span>FoodGuard</span>
+  </a>
+  <div class="masthead-tools">
+    <span id="device" class="status">Starting up</span>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="page">
+  <section class="intro">
+    <h1>Is it safe to eat?</h1>
+    <p>Photograph a fruit, a vegetable or the back of a food pack. FoodGuard checks freshness, reads the label against FSSAI limits and gives you a plain answer with a health score.</p>
+  </section>
+
+  <div class="workspace">
+    <form id="scan-form" class="scan" autocomplete="off" novalidate>
+      <fieldset class="block">
+        <legend class="block-title">What are you checking?</legend>
+        <div class="categories">
+          {% set art = {
+            'raw_produce': '<path d="M24 14c-3-4-10-4-12 2-2 7 3 18 8 18 2 0 3-1 4-1s2 1 4 1c5 0 10-11 8-18-2-6-9-6-12-2Z"/><path d="M24 14c0-4 2-7 5-8"/><path d="M24 12c-3-3-7-3-9-1 2 2 6 2 9 1Z"/>',
+            'packaged_solid': '<path d="M13 8h22l-2 4 2 4-2 4 2 4-2 4 2 4-2 4 2 4H13l2-4-2-4 2-4-2-4 2-4-2-4 2-4-2-4Z"/><path d="M19 18h10M19 23h10M19 28h6"/>',
+            'packaged_liquid': '<path d="M20 5h8v5l4 6v24a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3V16l4-6V5Z"/><path d="M16 22h16M16 33h16"/>',
+            'packaged_exempt': '<path d="M17 6h14v5H17z"/><path d="M15 11h18v28a3 3 0 0 1-3 3H18a3 3 0 0 1-3-3V11Z"/><path d="M24 20c-3 4-5 6-5 9a5 5 0 0 0 10 0c0-3-2-5-5-9Z"/>'
+          } %}
+          {% set blurb = {
+            'raw_produce': supported|join(', '),
+            'packaged_solid': 'Chips, biscuits, chocolate, noodles',
+            'packaged_liquid': 'Juice, soft drinks, flavoured milk',
+            'packaged_exempt': 'Oil, ghee, honey, dried fruit'
+          } %}
+          {% set short = {'raw_produce': 'Fruit or vegetable', 'packaged_solid': 'Packaged food',
+                          'packaged_liquid': 'Packaged drink', 'packaged_exempt': 'Oil, ghee or honey'} %}
+          {% for key in categories %}
+          <label class="cat">
+            <input type="radio" name="category" value="{{ key }}" {% if loop.first %}checked{% endif %}>
+            <span class="cat-body">
+              <svg viewBox="0 0 48 48" aria-hidden="true">{{ art[key]|safe }}</svg>
+              <span class="cat-name">{{ short[key] }}</span>
+              <span class="cat-blurb">{{ blurb[key] }}</span>
+            </span>
+          </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <div class="block">
+        <h2 class="block-title">Add a photo</h2>
+        <label id="dropzone" class="dropzone">
+          <input id="images" type="file" name="images" accept="image/*" multiple>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34V16a3 3 0 0 1 3-3h6l3-4h8l3 4h6a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3Z"/><circle cx="24" cy="24" r="7"/></svg>
+          <span class="drop-main">Drop a photo here or <u>browse</u></span>
+          <span id="drop-hint" class="drop-hint">One clear photo of the item, filling the frame.</span>
+        </label>
+        <div id="previews" class="previews"></div>
+      </div>
+
+      <details class="block extras">
+        <summary>Add details <span>optional</span></summary>
+        <div class="fields">
+          <label>Product name
+            <input type="text" name="product_name" placeholder="Amul Butter, or tomato">
+            <small>We check that the photo really shows this product.</small>
+          </label>
+          <label class="packaged-only">Barcode
+            <input type="text" name="barcode" inputmode="numeric" placeholder="8901234567890">
+          </label>
+          <label class="packaged-only">Expiry or best-before date
+            <input type="date" name="expiry_date">
+            <small>Only if you want the date checked too.</small>
+          </label>
+        </div>
+      </details>
+
+      <button id="submit" type="submit" class="go">Check this food</button>
+      <p id="form-error" class="form-error" role="alert"></p>
+    </form>
+
+    <section id="result" class="result" aria-live="polite">
+      <div class="empty">
+        <svg class="empty-art" viewBox="0 0 220 130" aria-hidden="true">
+          <path d="M20 96h180" class="ea-line"/>
+          <path d="M40 96c0-26 18-44 40-44s40 18 40 44" class="ea-bowl"/>
+          <path d="M70 60c-6-14 2-26 14-30-1 12-6 22-14 30Z" class="ea-leaf"/>
+          <circle cx="98" cy="62" r="13" class="ea-fruit"/>
+          <path d="M98 49c1-5 4-8 8-9" class="ea-line"/>
+          <rect x="138" y="44" width="40" height="52" rx="4" class="ea-pack"/>
+          <path d="M146 58h24M146 66h24M146 74h16" class="ea-line"/>
+        </svg>
+        <h2>Your result will appear here</h2>
+        <p>Every photo is first checked to make sure it is food, that it matches the type you picked, and that it is the product you named.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>Analysis runs on this computer. Product look-ups use the open Open Food Facts database. FoodGuard is a study aid: when in doubt, throw it out.</p>
+</footer>
+
+<template id="tpl-processing">
+  <div class="processing">
+    <div class="scan-frame">
+      <img class="scan-img" alt="">
+      <div class="scan-beam" aria-hidden="true"></div>
+    </div>
+    <div class="processing-text">
+      <h2>Checking your food</h2>
+      <ol class="steps"></ol>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-result">
+  <article class="verdict">
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 160 160">
+        <defs><path id="seal-ring" d="M80 80m-60 0a60 60 0 1 1 120 0a60 60 0 1 1-120 0"/></defs>
+        <circle cx="80" cy="80" r="74" class="seal-outer"/>
+        <circle cx="80" cy="80" r="47" class="seal-inner"/>
+        <text class="seal-ring-text"><textPath href="#seal-ring" startOffset="0" textLength="372" lengthAdjust="spacing">FOODGUARD CHECKED ✦ FOODGUARD CHECKED ✦</textPath></text>
+        <text x="80" y="88" class="seal-score"></text>
+        <text x="80" y="108" class="seal-sub"></text>
+      </svg>
+    </div>
+    <div class="verdict-text">
+      <h2 class="verdict-word"></h2>
+      <p class="verdict-reason"></p>
+      <p class="verdict-rating"></p>
+    </div>
+  </article>
+  <div class="hexagons"></div>
+  <div class="suggest"></div>
+  <div class="notes"></div>
+  <div class="sections"></div>
+  <details class="raw"><summary>Technical details</summary><pre></pre></details>
+</template>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

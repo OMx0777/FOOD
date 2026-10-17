@@ -1,0 +1,88 @@
+{
+  "_comment": "OCR test bench. One entry per photo in dataset_ocr/raw_images/. Values are what the PRINTED LABEL says, per 100 g (solids) or per 100 ml (liquids); sodium in grams (520 mg -> 0.52). Use null when the label does not declare a value. Add your own real pack photos (Lays, Maggi, Amul, Britannia, Kurkure ...) here; scripts/make_synthetic_labels.py manages the synthetic_* entries.",
+  "labels": [
+    {
+      "image": "EXAMPLE_your_photo.jpg",
+      "product_name": "Brand Product Name",
+      "category": "packaged_solid",
+      "per_100": {
+        "added_sugar_g": null,
+        "total_sugar_g": null,
+        "saturated_fat_g": null,
+        "sodium_g": null
+      }
+    },
+    {
+      "image": "synthetic_01_crunchy_masala_chips.jpg",
+      "product_name": "Crunchy Masala Chips",
+      "category": "packaged_solid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 1.1,
+        "total_sugar_g": 2.4,
+        "saturated_fat_g": 15.2,
+        "sodium_g": 0.74
+      }
+    },
+    {
+      "image": "synthetic_02_oat_digestive_biscuits.jpg",
+      "product_name": "Oat Digestive Biscuits",
+      "category": "packaged_solid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 2.0,
+        "total_sugar_g": 2.6,
+        "saturated_fat_g": 3.1,
+        "sodium_g": 0.41
+      }
+    },
+    {
+      "image": "synthetic_03_mango_fruit_drink.jpg",
+      "product_name": "Mango Fruit Drink",
+      "category": "packaged_liquid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 12.8,
+        "total_sugar_g": 14.2,
+        "saturated_fat_g": 0.0,
+        "sodium_g": 0.012
+      }
+    },
+    {
+      "image": "synthetic_04_lightly_salted_makhana.jpg",
+      "product_name": "Lightly Salted Makhana",
+      "category": "packaged_solid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 0.0,
+        "total_sugar_g": 0.8,
+        "saturated_fat_g": 1.2,
+        "sodium_g": 0.52
+      }
+    },
+    {
+      "image": "synthetic_05_unsweetened_soy_milk.jpg",
+      "product_name": "Unsweetened Soy Milk",
+      "category": "packaged_liquid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 0.0,
+        "total_sugar_g": 0.4,
+        "saturated_fat_g": 0.3,
+        "sodium_g": 0.045
+      }
+    },
+    {
+      "image": "synthetic_06_classic_cream_wafers.jpg",
+      "product_name": "Classic Cream Wafers",
+      "category": "packaged_solid",
+      "synthetic": true,
+      "per_100": {
+        "added_sugar_g": 36.5,
+        "total_sugar_g": 38.0,
+        "saturated_fat_g": 16.4,
+        "sodium_g": 0.2
+      }
+    }
+  ]
+}
